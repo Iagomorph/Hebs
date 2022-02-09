@@ -4,7 +4,7 @@
 $config_db = [
 	'host' => '127.0.0.1',
 	'port' => '8889',
-	'dbname' => 'cours_php',
+	'dbname' => 'Hebs',
 	'user' => 'root',
 	'pass' => 'root'
 ];
