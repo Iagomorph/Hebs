@@ -35,7 +35,27 @@ class dbManager{
         return true;
     }
 
-    public function update($table, $values, $condition, $parameters = ""){
-        
+    public function update($table, $values, $condition = "", $parameters){
+        if($condition == ""){
+            $sql = "UPDATE $table SET $values";
+        }else{
+            $sql = "UPDATE $table SET $values $condition";
+        };
+
+        $querry = $this->_db->prepare($sql);
+
+        $querry->execute($parameters);
+
+        return true;
+    }
+
+    public function delete($table,$values,$parameters){
+        $sql = "DELETE FROM $table WHERE $values";
+
+        $querry = $this->_db->prepare($sql);
+
+        $querry->execute($parameters);
+
+        return true;
     }
 }

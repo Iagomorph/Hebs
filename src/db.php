@@ -1,5 +1,5 @@
 <?php
-
+include 'class/dbManager.php';
 // tableau de config
 $config_db = [
 	'host' => '127.0.0.1',
@@ -16,6 +16,7 @@ $dsn = 'mysql:host=' . $config_db['host'] . ';dbname=' . $config_db['dbname'] . 
 try {
 	$db = new PDO($dsn, $config_db['user'], $config_db['pass']);
 	
+    $dbManager = new bdManager($db);
 }
 catch (Exception $e) {
 	// sinon on die(), cela fait 'crasher' le site internet avec un message d'erreur
