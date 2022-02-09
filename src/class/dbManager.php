@@ -8,6 +8,11 @@ class dbManager{
     }
 
     public function select($find, $table, $condition = "",$parameters){
+
+        //Exemple :
+        //$parameters(':id'=> $idUser)
+        //dbManager->select('email','User','WHERE id = :id',$parameters)
+
         if($condition == ""){
             $sql = "SELECT $find FROM $table";
         }
@@ -26,6 +31,11 @@ class dbManager{
     }
 
     public function insert($table,$values,$parameters){
+
+        // Exemple :
+        // $parameters(':email'=> $mailUser, ':mdp' => $mdpUser, ':username' => $username)
+        // dbManager->insert('User(email, mdp, username)','(:email, :mdp, :username)',$parameters)
+
         $sql = "INSERT INTO $table VALUES $values";
         
         $querry = $this->_db->prepare($sql);
@@ -36,6 +46,11 @@ class dbManager{
     }
 
     public function update($table, $values, $condition = "", $parameters){
+
+        // Exemple :
+        // $parameters = array(':id' => $idUser, ':mdp' = 'newMDP' )
+        // dbManager->delete('User','mdp = :mdp','WHERE id = :id', $parameters)
+
         if($condition == ""){
             $sql = "UPDATE $table SET $values";
         }else{
@@ -50,6 +65,11 @@ class dbManager{
     }
 
     public function delete($table,$values,$parameters){
+
+        // Exemple :
+        // $parameters = array(':id' => $idUser)
+        // dbManager->delete('User','id = :id',$parameters)
+
         $sql = "DELETE FROM $table WHERE $values";
 
         $querry = $this->_db->prepare($sql);
