@@ -19,3 +19,10 @@ foreach ($pages as $url => $label) {
 <?php
 }
 ?>
+<?php
+    if(!empty($_SESSION['id'])){
+    ?>
+    <li><a href="actions/actionLogout.php">Déconnexion</a></li>
+    <?php
+    };
+?>
