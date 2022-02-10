@@ -26,3 +26,7 @@ foreach ($pages as $url => $label) {
     <?php
     };
 ?>
+        </ul>
+        </div>
+    </div> 
+</header> 
