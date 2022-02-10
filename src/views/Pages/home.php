@@ -7,9 +7,12 @@
     <title>Home</title>
 </head>
 <body>
-    <p>Page Maison</p>
+    <p>Le Hèbs MarketPlace</p>
 <?php
     require_once '../src/init.php'; ?>
+<?php 
+?>
+
 </body>
 
 </html>
