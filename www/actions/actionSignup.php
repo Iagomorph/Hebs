@@ -9,13 +9,13 @@ if (empty($_POST['mail']) && empty($_POST['mdp'])){
 }
 else {
     $mail_user = $_POST['mail'];
-    $mdpUser = $_POST['mdp'];
+    $mdpUser = hash('sha256',$_POST['mdp']);
     $username = $_POST['username'];
 };
 
 
-$parameters=array(':email'=> $mailUser, ':mdp' => $mdpUser, ':username' => $username);
-$dbManager->insert('User(mail, mdp, username)','(:email, :mdp, :username)',$parameters);
+$parameters=array(':email'=> $mail_user, ':mdp' => $mdpUser, ':username' => $username,':admin'=> 0);
+$dbManager->insert('user(mail, mdp, username, admin)','(:email, :mdp, :username, :admin)',$parameters);
 
 
 header("Location: /index.php?p=signup&successful=1");

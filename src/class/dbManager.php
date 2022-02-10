@@ -7,7 +7,7 @@ class dbManager{
         $this->_db = $db;
     }
 
-    public function select($find, $table, $condition = "",$parameters){
+    public function select($find, $table,$parameters,$condition = ""){
 
         //Exemple :
         //$parameters = array(':id'=> $idUser)
@@ -36,7 +36,7 @@ class dbManager{
         // $parameters = array(':email'=> $mailUser, ':mdp' => $mdpUser, ':username' => $username)
         // $dbManager->insert('User(email, mdp, username)','(:email, :mdp, :username)',$parameters)
 
-        $sql = "INSERT INTO $table VALUES $values";
+        $sql = "INSERT INTO " . $table . ' VALUES ' . $values;
         
         $querry = $this->_db->prepare($sql);
 
@@ -45,7 +45,7 @@ class dbManager{
         return true;
     }
 
-    public function update($table, $values, $condition = "", $parameters){
+    public function update($table, $values, $parameters,  $condition = ""){
 
         // Exemple :
         // $parameters = array(':id' => $idUser, ':mdp' = 'newMDP' )

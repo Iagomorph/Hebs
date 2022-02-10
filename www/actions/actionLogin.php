@@ -5,15 +5,24 @@ require_once '../../src/db.php';
 <?php
 
 $username = $_POST['username'];
-$mdp = $_POST['mdp'];
+$mdp = hash('sha256',$_POST['mdp']);
 
-$parameters = array(':user'=>$username, 'mdp'=>$mdp);
-$dataTab = $dbManager->select('*','User','WHERE username = :user and mdp = :mdp',$parameters);
+$parameters = array(':user'=>$username, ':mdp'=>$mdp);
+$dataTab = $dbManager->select('*','user',$parameters,'WHERE username = :user and mdp = :mdp');
 
-for($i = 0;$i<count($dataTab);$i++){
-
-}
-
+if(empty($dataTab)){
+    //header("Location: /index.php?p=login&erreur=1");
+    var_dump($dataTab);
+}else{
+    var_dump($dataTab);
+    foreach ($dataTab[0] as $key => $value) {
+        if($key == 'idUser'){
+            $_SESSION['id'] = $value;
+            echo 'test';
+            header("Location: /index.php?p=login&successful=1");
+        };
+};
+};
 // $sql ='SELECT * FROM Users WHERE email = :email and mdp = :mdp';
 
 // $querry = $db->prepare($sql);

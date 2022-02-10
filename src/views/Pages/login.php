@@ -19,6 +19,22 @@
         <input type="text" name = "mdp" placeholder="Mot de passe"> <br>
         <button type="submit" >Se Connecter</button>
     </form>
+<?php
+$erreur = (isset($_GET['erreur'])) ? $_GET['erreur'] : "";
+if($erreur == '1'){
+?>
+<p>veuillez rentrer des champs valide</p>
+<?php
+};
+?>
+<?php
+$successful = (isset($_GET['successful'])) ? $_GET['successful'] : "";
+if($successful == '1'){
+?>
+<p>vous vous êtes connecté avec succès</p>
+<?php
+};
+?>
 </body>
 
 

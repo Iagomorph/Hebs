@@ -16,7 +16,7 @@ $dsn = 'mysql:host=' . $config_db['host'] . ';dbname=' . $config_db['dbname'] . 
 try {
 	$db = new PDO($dsn, $config_db['user'], $config_db['pass']);
 	
-    $dbManager = new bdManager($db);
+    $dbManager = new dbManager($db);
 }
 catch (Exception $e) {
 	// sinon on die(), cela fait 'crasher' le site internet avec un message d'erreur
