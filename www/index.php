@@ -30,6 +30,9 @@ $p = (isset($_GET['p'])) ? $_GET['p'] : "";
     case "home":
         include "../src/views/pages/home.php";
         break;
+    case "panier":
+        include "../src/view/pages/panier.php";
+        break;
     };
 ?>
 
