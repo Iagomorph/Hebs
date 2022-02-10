@@ -10,7 +10,7 @@
 <?php
     require_once '../src/init.php'; ?>
     <h2>Créer un compte</h2>
-    <form action="actions/actionSignUp.php" method="POST" >
+    <form action="actions/actionSignup.php" method="POST" >
         <label for="">Pseudo :</label>
         <input type="text" name="username" placeholder="pseudonyme">
         <label for="">Adresse mail :</label>

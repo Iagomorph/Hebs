@@ -10,8 +10,8 @@ class dbManager{
     public function select($find, $table, $condition = "",$parameters){
 
         //Exemple :
-        //$parameters(':id'=> $idUser)
-        //dbManager->select('email','User','WHERE id = :id',$parameters)
+        //$parameters = array(':id'=> $idUser)
+        //$dbManager->select('email','User','WHERE id = :id',$parameters)
 
         if($condition == ""){
             $sql = "SELECT $find FROM $table";
@@ -33,8 +33,8 @@ class dbManager{
     public function insert($table,$values,$parameters){
 
         // Exemple :
-        // $parameters(':email'=> $mailUser, ':mdp' => $mdpUser, ':username' => $username)
-        // dbManager->insert('User(email, mdp, username)','(:email, :mdp, :username)',$parameters)
+        // $parameters = array(':email'=> $mailUser, ':mdp' => $mdpUser, ':username' => $username)
+        // $dbManager->insert('User(email, mdp, username)','(:email, :mdp, :username)',$parameters)
 
         $sql = "INSERT INTO $table VALUES $values";
         
@@ -49,7 +49,7 @@ class dbManager{
 
         // Exemple :
         // $parameters = array(':id' => $idUser, ':mdp' = 'newMDP' )
-        // dbManager->delete('User','mdp = :mdp','WHERE id = :id', $parameters)
+        // $dbManager->delete('User','mdp = :mdp','WHERE id = :id', $parameters)
 
         if($condition == ""){
             $sql = "UPDATE $table SET $values";
@@ -68,7 +68,7 @@ class dbManager{
 
         // Exemple :
         // $parameters = array(':id' => $idUser)
-        // dbManager->delete('User','id = :id',$parameters)
+        // $dbManager->delete('User','id = :id',$parameters)
 
         $sql = "DELETE FROM $table WHERE $values";
 
