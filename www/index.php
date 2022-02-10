@@ -16,16 +16,16 @@
 $p = (isset($_GET['p'])) ? $_GET['p'] : "";
     switch ($p) {
     case "login":
-        include "../src/views/pages/home.php";
+        include "../src/views/pages/login.php";
         break;
     case "contact":
         include "../src/views/pages/profil.php";
         break;
     case "signup":
-        include "../src/views/pages/login.php";
+        include "../src/views/pages/signup.php";
         break;
     case "home":
-        include "../src/views/pages/signup.php";
+        include "../src/views/pages/home.php";
         break;
     };
 ?>

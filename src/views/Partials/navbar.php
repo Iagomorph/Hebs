@@ -9,7 +9,8 @@ $pages = array(
     "home" => "MarketPlace", 
     "signup" => "S'Inscrire", 
     "login" => "Se Connecter", 
-    "profil" => "Mon Profil"
+    "profil" => "Mon Profil",
+    "panier" => "Mon Panier"
 ); 
 $p = (isset($_GET['p'])) ? $_GET['p'] : "";
 foreach ($pages as $url => $label) {
