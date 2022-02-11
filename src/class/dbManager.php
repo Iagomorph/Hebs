@@ -7,7 +7,7 @@ class dbManager{
         $this->_db = $db;
     }
 
-    public function select($find, $table,$parameters,$condition = ""){
+    public function select($find, $table,$parameters = "",$condition = ""){
 
         //Exemple :
         //$parameters = array(':id'=> $idUser)
@@ -15,16 +15,22 @@ class dbManager{
 
         if($condition == ""){
             $sql = "SELECT $find FROM $table";
+            $querry = $this->_db->prepare($sql);
+        
+            $querry->execute();
+    
+            $data = $querry->fetchAll(PDO::FETCH_ASSOC);
         }
         else{
             $sql = "SELECT $find FROM $table $condition";
+
+            $querry = $this->_db->prepare($sql);
+            
+            $querry->execute($parameters);
+
+            $data = $querry->fetchAll(PDO::FETCH_ASSOC);
+
         };
-
-        $querry = $this->_db->prepare($sql);
-        
-        $querry->execute($parameters);
-
-        $data = $querry->fetchAll(PDO::FETCH_ASSOC);
 
         return $data;
 

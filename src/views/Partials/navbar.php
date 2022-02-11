@@ -1,6 +1,7 @@
 <header>
+  <div class="divNav">
 <nav>
-  <a href="index.php?p=home">Marketplace</a>
+  <a href="index.php?p=article">Marketplace</a>
   <?php
     if(!empty($_SESSION['id'])){
     ?>
@@ -17,4 +18,5 @@
     };
     ?>
 </nav>
+</div>
 </header>
