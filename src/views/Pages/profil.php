@@ -19,5 +19,6 @@
         <input type="text" name = "sellImg" placeholder="image url"> <br>
         <button type="submit" >Mettre en Vente</button>
     </form>
+    
 </body>
 </html>
