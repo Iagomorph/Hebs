@@ -6,6 +6,7 @@
     ?>
     <a href="index.php?p=profil">Mon profil</a>
     <a href="index.php?p=panier">Mon panier</a>
+    <a href="actions/admin.php">Modération</a>
     <a href="actions/actionLogout.php">Déconnexion</a>
     <?php
     }else{

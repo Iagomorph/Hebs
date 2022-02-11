@@ -13,7 +13,6 @@ else {
     $username = $_POST['username'];
 };
 
-
 $parameters=array(':email'=> $mail_user, ':mdp' => $mdpUser, ':username' => $username,':admin'=> 0);
 $dbManager->insert('user(mail, mdp, username, admin)','(:email, :mdp, :username, :admin)',$parameters);
 

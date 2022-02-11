@@ -35,6 +35,9 @@ $p = (isset($_GET['p'])) ? $_GET['p'] : "";
     case "panier":
         include "../src/view/pages/panier.php";
         break;
+    case "admin":
+        include "../src/view/pages/admin.php";
+        break;
     };
 ?>
 </body>
