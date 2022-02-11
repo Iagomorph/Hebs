@@ -5,10 +5,7 @@
     $_SESSION['idPost'] = $p;
     $result = $dbManager->select('*','article',$parameters,'WHERE idArticle=:id');
     $parameters2 = array(':id'=> $result[0]['idUser']);
-    $user = $dbManager->select('username','user',$parameters2,'WHERE idUser=:id');
-
-
-
+    $user = $dbManager->select('*','user',$parameters2,'WHERE idUser=:id');    
 
 ?>
 
@@ -35,7 +32,19 @@
             <input type="hidden" name="article" value= "<?=$result[0]["nom"]?>" >
 
                 <p class="prix"> <?php  echo $result[0]["prix"]; ?>€ 
-                <input class="btnPanier" type="submit" value="Ajouter au panier"> </input> </p>
+                <input class="btnPanier" type="submit" value="Ajouter au panier"> </input>
+                <?php
+                if($user[0]['admin']== 1){
+                    ?>
+                    <input type="hidden" name="del" value= "<?=$p?>" >
+                    <input class="btnPanier" type="submit" value="Supprimer l'article"> </input></p>
+                    <?php
+                    }else{
+                        ?>
+                        </p>
+                        <?php
+                    };
+                ?>
                 <p class ="desc">Description </br>
                 <?php  echo $result[0]["description"]; ?></p>
             </div>
