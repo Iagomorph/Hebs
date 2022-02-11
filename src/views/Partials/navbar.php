@@ -7,8 +7,14 @@
     ?>
     <a href="index.php?p=profil">Mon profil</a>
     <a href="index.php?p=panier">Mon panier</a>
-    <a href="actions/admin.php">Modération</a>
+    <?php if($_SESSION['admin'] == 1){
+    ?>
+    <a href="index.php?p=admin">Modération</a>
+    <?php
+    };
+    ?>
     <a href="actions/actionLogout.php">Déconnexion</a>
+
     <?php
     }else{
     ?>

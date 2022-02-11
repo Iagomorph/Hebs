@@ -4,7 +4,7 @@
     <div class="container">
 	<div class="screen">
 		<div class="screen__content">
-			<form class="login" action ="actions/actionLogin.php" method="POST">
+			<form class="login" action ="actions/actionsignup.php" method="POST">
 				<div class="login__field">
 					<i class="login__icon fas fa-user"></i>
 					<input type="text" class="login__input" name="username" placeholder="Username">

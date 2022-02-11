@@ -35,10 +35,10 @@ $p = (isset($_GET['p'])) ? $_GET['p'] : "";
         include "../src/views/pages/home.php";
         break;
     case "panier":
-        include "../src/view/pages/panier.php";
+        include "../src/views/pages/panier.php";
         break;
     case "admin":
-        include "../src/view/pages/admin.php";
+        include "../src/views/pages/admin.php";
         break;
     case "article":
         include "../src/views/pages/article.php";

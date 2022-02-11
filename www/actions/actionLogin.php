@@ -17,6 +17,9 @@ if(empty($dataTab)){
         if($key == 'idUser'){
             $_SESSION['id'] = $value;
             echo 'test';
+        };
+        if($key = 'admin'){
+            $_SESSION['admin'] = $value;
             header("Location: /index.php?p=article");
         };
 };
