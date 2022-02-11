@@ -1,32 +1,19 @@
-<header class="navbar navbar-default navbar-static-top">
-    <div class="container-fluid">
-        <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav navbar-right">
-        <?php $currentPage = 'index'; ?>
-    <?php
-
-$pages = array(
-    "home" => "MarketPlace", 
-    "signup" => "S'Inscrire", 
-    "login" => "Se Connecter", 
-    "profil" => "Mon Profil",
-    "panier" => "Mon Panier"
-); 
-$p = (isset($_GET['p'])) ? $_GET['p'] : "";
-foreach ($pages as $url => $label) {
-?>
-<li><a <?= $p == $url ? 'class="active"' : ""?> href="index.php?p=<?=$url?>" > <?=$label?> </a></li>
-<?php
-}
-?>
-<?php
+<header>
+<nav>
+  <a href="index.php?p=home">Marketplace</a>
+  <?php
     if(!empty($_SESSION['id'])){
     ?>
-    <li><a href="actions/actionLogout.php">Déconnexion</a></li>
+    <a href="index.php?p=profil">Mon profil</a>
+    <a href="index.php?p=panier">Mon panier</a>
+    <a href="actions/actionLogout.php">Déconnexion</a>
+    <?php
+    }else{
+    ?>
+    <a href="index.php?p=signup">S'inscrire</a>
+    <a href="index.php?p=login">Connexion</a>
     <?php
     };
-?>
-        </ul>
-        </div>
-    </div> 
-</header> 
+    ?>
+</nav>
+</header>

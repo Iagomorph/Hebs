@@ -9,32 +9,33 @@
 
 
 <body>
-    <h2>Bienvenue</h2>
-    <p>Identifiez Vosu</p>
 <?php require_once '../src/init.php'; ?>
-    <form action="actions/actionLogin.php" method="POST" >
-        <label for="">Username :</label>
-        <input type="text" name ="username" placeholder="Pseudonyme"> <br>
-        <label for="">Mot de passe :</label>
-        <input type="text" name = "mdp" placeholder="Mot de passe"> <br>
-        <button type="submit" >Se Connecter</button>
-    </form>
-<?php
-$erreur = (isset($_GET['erreur'])) ? $_GET['erreur'] : "";
-if($erreur == '1'){
-?>
-<p>veuillez rentrer des champs valide</p>
-<?php
-};
-?>
-<?php
-$successful = (isset($_GET['successful'])) ? $_GET['successful'] : "";
-if($successful == '1'){
-?>
-<p>vous vous êtes connecté avec succès</p>
-<?php
-};
-?>
+    <div class="container">
+	<div class="screen">
+		<div class="screen__content">
+			<form class="login" action ="actions/actionLogin.php" method="POST">
+				<div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input type="text" class="login__input" name="username" placeholder="Username">
+				</div>
+				<div class="login__field">
+					<i class="login__icon fas fa-lock"></i>
+					<input type="password" class="login__input" name="mdp" placeholder="Password">
+				</div>
+				<button class="button login__submit" type="submit">
+					<span class="button__text">Log In Now</span>
+					<i class="button__icon fas fa-chevron-right"></i>
+				</button>				
+			</form>
+		</div>
+		<div class="screen__background">
+			<span class="screen__background__shape screen__background__shape4"></span>
+			<span class="screen__background__shape screen__background__shape3"></span>		
+			<span class="screen__background__shape screen__background__shape2"></span>
+			<span class="screen__background__shape screen__background__shape1"></span>
+		</div>		
+	</div>
+</div>
 </body>
 
 
