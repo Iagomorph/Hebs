@@ -10,6 +10,7 @@ session_start();
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <title>Le Hèbs</title>
 </head>
@@ -35,6 +36,13 @@ $p = (isset($_GET['p'])) ? $_GET['p'] : "";
     case "panier":
         include "../src/view/pages/panier.php";
         break;
+    case "article":
+        include "../src/views/pages/article.php";
+        break;
+    case "post":
+        include "../src/views/pages/post.php";
+        break;
+
     };
 ?>
 </body>
@@ -42,5 +50,7 @@ $p = (isset($_GET['p'])) ? $_GET['p'] : "";
 <?php      include '../src/views/partials/footer.php'; ?>
 </footer>
 
+
+<script src="assets/js/script.js"></script>
 
 </html>
