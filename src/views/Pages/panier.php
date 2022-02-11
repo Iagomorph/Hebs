@@ -10,7 +10,7 @@
 
 <body>
 <?php 
-$tabAchat =$_SESSION['tabAchat'];
+$tabAchat = $_SESSION['tabAchat'];
 for($i=0;$i<$tabAchat;$i++){
     echo("<li>$tabAchat</li>");
 };
