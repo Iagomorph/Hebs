@@ -1,3 +1,15 @@
+<?php 
+    require_once ('../src/class/dbManager.php');
+    $p = (isset($_GET['id'])) ? $_GET['id'] : "";
+    $parameters = array(':id'=> $p);
+    $result = $dbManager->select('*','article',$parameters,'WHERE idArticle=:id');
+    $parameters2 = array(':id'=> $result[0]['idUser']);
+    $user = $dbManager->select('username','user',$parameters2,'WHERE idUser=:id');
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,19 +22,27 @@
     <div class="fichePdt"> 
     <form class="article" action="actions/actionBuy.php" methode="post">
             <div class="titre"> 
-                <h1>Nom du produit</h1> 
-                <p class="nomUser">Mis en ligne pas Nom du user</p>
-                <p class="tag"> tag </p>
+                <h1>
+                <?php  echo $result[0]["nom"]; ?>
+                </h1>
+
+                <p class="nomUser">Mis en ligne par :
+                    <?php  echo $user[0]["username"];  ?>
+                </p>
+
+                <p class="tag">
+                    <?php  echo $result[0]["tag"]; ?>
+                </p>
             </div> 
             <div class="divImg">
-                <img class="image" src="https://images.unsplash.com/photo-1518388711175-fc28d3f6ade5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTkyfHxmbG93ZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60" alt="Image du produit">
+                <img class="image" src="<?php  echo $result[0]["image"]; ?>" alt="Image du produit">
             </div>
             <div class="informations">
 
-                <p class="prix">128 988€
+                <p class="prix"> <?php  echo $result[0]["prix"]; ?>€ 
                 <input class="btnPanier" type="submit" value="Ajouter au panier"> </input> </p>
                 <p class ="desc">Description </br>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac arcu in nulla mattis imperdiet id ac ex. Morbi metus eros, eleifend nec massa eu, dignissim luctus eros. Aliquam pretium velit placerat, tempor orci vel, finibus ex. Suspendisse eget leo ipsum. Nunc quis ante ipsum. Etiam blandit massa accumsan turpis pellentesque accumsan sed vitae lacus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque tempor accumsan molestie. Vestibulum</p>
+                <?php  echo $result[0]["description"]; ?></p>
             </div>
         </form>
     </div>

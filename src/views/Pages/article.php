@@ -10,7 +10,9 @@
             for ($i=0; $i < count($result); $i++) {
                 echo ('<div class="productCard" data-attr="'.$result[$i]["idArticle"].'">');
                 echo ('<div class="divImg">');
-                echo ('<img class="imgPdt" src="'.$result[$i]["image"].'"  ></img>');
+                echo ('<a href="index.php?p=post&id='.$result[$i]["idArticle"].'">');
+                echo ('<img class="imgPdt" src="'.$result[$i]["image"].'"></img>');
+                echo ("</a>");
                 echo ("</div>");
                 echo ('<div class="divTxt">');
                 echo ('<p class="productName">'.$result[$i]["nom"].'</p>');
