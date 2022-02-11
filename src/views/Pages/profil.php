@@ -10,6 +10,8 @@
         <input type="text" name = "sellDesc" placeholder="description"> <br>
         <label for="">Image :</label>
         <input type="text" name = "sellImg" placeholder="image url"> <br>
+        <label for="">Tag :</label>
+        <input type="text" name = "sellTag" placeholder="tag"> <br>
         <button type="submit" >Mettre en Vente</button>
     </form>
 
