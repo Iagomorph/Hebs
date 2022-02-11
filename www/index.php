@@ -14,6 +14,7 @@ session_start();
 
     <title>Le Hèbs</title>
 </head>
+
 <?php     include '../src/views/partials/navbar.php';?>
 <body>
 <?php

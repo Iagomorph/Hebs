@@ -6,9 +6,10 @@
 }
 nav{
   width: 100%;
-  position: fixed;
+  /* position: fixed; */
   top:50px;
   text-align:center;
+  margin-top: 50px;
 }
 nav a{
   font-family: 'Oswald', sans-serif;
@@ -68,6 +69,9 @@ nav a:hover:before{
     opacity:1;
     transform:translateY(0);
   }
+}
+.divNav {
+  height: 100px;
 }
 
 /* @for $i from 1 through 5 {
